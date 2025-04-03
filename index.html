@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazılımcı Portfolyo</title>
+    <style>
+        :root {
+            --primary: #5e17eb;
+            --secondary: #04dba7;
+            --dark: #121212;
+            --light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: 0.5s;
+        }
+        
+        .navbar.sticky {
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 10%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            transition: 0.3s;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            left: 0;
+            bottom: -5px;
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards 0.3s;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards 0.6s;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards 0.9s;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .shape {
+            position: absolute;
+            animation: float 15s linear infinite;
+            opacity: 0.15;
+        }
+        
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+        
+        .square {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary);
+            transform: rotate(45deg);
+        }
+        
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 120px solid var(--primary);
+        }
+        
+        section {
+            padding: 100px 10%;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background: var(--secondary);
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .skill-card.animated {
+            animation: fadeUp 0.6s ease forwards;
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(94, 23, 235, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            transform: scale(0);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+        }
+        
+        .skill-card:hover::before {
+            transform: scale(1);
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .skill-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .project-card.animated {
+            animation: fadeUp 0.6s ease forwards;
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(94, 23, 235, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--secondary);
+            color: var(--dark);
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .project-btn:hover {
+            background: var(--light);
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .contact-form.animated {
+            animation: fadeUp 0.6s ease forwards;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .contact-info {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .contact-info.animated {
+            animation: fadeUp 0.6s ease forwards 0.3s;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+        
+        .contact-item:hover .contact-icon {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        footer {
+            padding: 2rem 10%;
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.5s;
+            z-index: 999;
+        }
+        
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+                opacity: 0.5;
+            }
+        }
+        
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .navbar {
+                padding: 1rem 5%;
+            }
+            
+            .navbar.sticky {
+                padding: 0.8rem 5%;
+            }
+            
+            section {
+                padding: 80px 5%;
+            }
+            
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">DevPortfolio</div>
+        <div class="nav-links">
+            <a href="#home">Ana Sayfa</a>
+            <a href="#skills">Yetenekler</a>
+            <a href="#projects">Projeler</a>
+            <a href="#contact">İletişim</a>
+        </div>
+    </nav>
+    
+    <!-- Header / Hero Section -->
+    <header id="home">
+        <h1 class="hero-title">Merhaba, Ben <span style="color: var(--secondary);">İsim Soyisim</span></h1>
+        <h3 class="hero-subtitle">Full Stack Yazılım Geliştirici</h3>
+        <p class="hero-description">Modern web teknolojileri ve yazılım mimarisi konusunda uzmanlaşmış, kullanıcı deneyimini ön planda tutan çözümler üreten bir geliştiriciyim.</p>
+        <a href="#contact" class="btn">Benimle İletişime Geç</a>
+        
+        <div class="floating-shapes">
+            <div class="shape circle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="shape square" style="top: 60%; left: 25%; animation-delay: 2s;"></div>
+            <div class="shape triangle" style="top: 30%; left: 60%; animation-delay: 4s;"></div>
+            <div class="shape circle" style="top: 70%; left: 80%; animation-delay: 6s;"></div>
+            <div class="shape square" style="top: 15%; left: 85%; animation-delay: 8s;"></div>
+        </div>
+    </header>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Yeteneklerim</h2>
+        <div class="skills-container">
+            <div class="skill-card" data-delay="0">
+                <div class="skill-icon">💻</div>
+                <h3 class="skill-title">Frontend</h3>
+                <p>HTML5, CSS3, JavaScript, React, Vue.js, TypeScript, Responsive Design, UI/UX</p>
+            </div>
+            
+            <div class="skill-card" data-delay="0.2">
+                <div class="skill-icon">⚙️</div>
+                <h3 class="skill-title">Backend</h3>
+                <p>Node.js, Express, Django, Flask, RESTful API, GraphQL, PHP, Java</p>
+            </div>
+            
+            <div class="skill-card" data-delay="0.4">
+                <div class="skill-icon">🗄️</div>
+                <h3 class="skill-title">Veritabanı</h3>
+                <p>MySQL, PostgreSQL, MongoDB, Firebase, Redis, SQL, NoSQL</p>
+            </div>
+            
+            <div class="skill-card" data-delay="0.6">
+                <div class="skill-icon">🚀</div>
+                <h3 class="skill-title">DevOps</h3>
+                <p>Docker, Kubernetes, AWS, Azure, CI/CD, Git, GitHub, GitLab</p>
+            </div>
+            
+            <div class="skill-card" data-delay="0.8">
+                <div class="skill-icon">📱</div>
+                <h3 class="skill-title">Mobil</h3>
+                <p>React Native, Flutter, iOS, Android, Firebase, App Development</p>
+            </div>
+            
+            <div class="skill-card" data-delay="1">
+                <div class="skill-icon">🧠</div>
+                <h3 class="skill-title">Diğer</h3>
+                <p>Agile, Scrum, Problem Çözme, Takım Çalışması, İletişim</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projelerim</h2>
+        <div class="projects-container">
+            <div class="project-card" data-delay="0">
+                <div class="project-img">
+                    <img src="/api/placeholder/400/320" alt="placeholder">
+                    <div class="project-overlay">
+                        <a href="#" class="project-btn">Detayları Gör</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">E-Ticaret Platformu</h3>
+                    <p>React ve Node.js kullanılarak geliştirilen, modern arayüze sahip tam kapsamlı bir e-ticaret çözümü.</p>
+                </div>
+            </div>
+            
+            <div class="project-card" data-delay="0.3">
+                <div class="project-img">
+                    <img src="/api/placeholder/400/320" alt="placeholder">
+                    <div class="project-overlay">
+                        <a href="#" class="project-btn">Detayları Gör</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Finans Yönetim Uygulaması</h3>
+                    <p>Kullanıcıların finansal verilerini takip edebilmeleri için geliştirilmiş, veri görselleştirme özellikleri olan dashboard.</p>
+                </div>
+            </div>
+            
+            <div class="project-card" data-delay="0.6">
+                <div class="project-img">
+                    <img src="/api/placeholder/400/320" alt="placeholder">
+                    <div class="project-overlay">
+                        <a href="#" class="project-btn">Detayları Gör</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Sosyal Medya API</h3>
+                    <p>RESTful API prensipleriyle geliştirilmiş, yüksek performanslı sosyal medya backend sistemi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">İletişim</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Adınız">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="E-mail Adresiniz">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Konu">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Mesajınız"></textarea>
+                </div>
+                <button type="submit" class="btn">Gönder</button>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Konum</h4>
+                        <p>İstanbul, Türkiye</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>mail@example.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h4>Telefon</h4>
+                        <p>+90 555 123 4567</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <div>
+                        <h4>Freelance</h4>
+                        <p>Müsait - Yeni projeler için iletişime geçin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-link">
+                <i>𝕏</i>
+            </a>
+            <a href="#" class="social-link">
+                <i>in</i>
+            </a>
+            <a href="#" class="social-link">
+                <i>𝔾</i>
+            </a>
+            <a href="#" class="social-link">
+                <i>f</i>
+            </a>
+        </div>
+        <p class="copyright">© 2025 İsim Soyisim. Tüm Hakları Saklıdır.</p>
+    </footer>
+    
+    <!-- Scroll To Top Button -->
+    <div class="scroll-to-top">↑</div>
+    
+    <script>
+        // Sticky Navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('sticky', window.scrollY > 0);
+            
+            // Scroll To Top Button
+            const scrollBtn = document.querySelector('.scroll-to-top');
+            scrollBtn.classList.toggle('active', window.scrollY > 500);
+        });
+        
+        // Scroll To Top
+        document.querySelector('.scroll-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animate Elements on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('animated');
+                    }, delay * 1000);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.skill-card, .project-card, .contact-form, .contact-info').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
