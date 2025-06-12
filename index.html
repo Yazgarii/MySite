@@ -2,25 +2,105 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#4F81FF">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Netriva - Modern Web Tasarım Ajansı | SEO Dostu Web Siteleri</title>
     <meta name="description" content="Netriva ile modern, hızlı ve SEO dostu web siteleri. Kartvizit sitesinden e-ticarete tüm çözümler tek elde. Profesyonel web tasarım hizmetleri.">
     <meta name="keywords" content="web tasarım, web sitesi, e-ticaret, SEO, mobil uyumlu, İstanbul">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://netriva.com">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Netriva - Modern Web Tasarım Ajansı">
     <meta property="og:description" content="Modern, hızlı ve SEO dostu web siteleri ile işinizi dijital dünyada öne çıkarın.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://netriva.com">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Netriva">
     
-    <link rel="stylesheet" href="styles.css">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Netriva - Modern Web Tasarım Ajansı">
+    <meta name="twitter:description" content="Modern, hızlı ve SEO dostu web siteleri ile işinizi dijital dünyada öne çıkarın.">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Netriva",
+      "url": "https://netriva.com",
+      "logo": "https://netriva.com/logo.png",
+      "description": "Profesyonel web tasarım ve yazılım geliştirme hizmetleri",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "TR",
+        "addressLocality": "İstanbul"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+90-555-555-5555",
+        "contactType": "customer service",
+        "availableLanguage": "Turkish"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/netriva",
+        "https://instagram.com/netriva"
+      ],
+      "offers": [
+        {
+          "@type": "Service",
+          "name": "Temel Web Sitesi",
+          "description": "5 sayfalık kurumsal web sitesi",
+          "provider": {
+            "@type": "Organization",
+            "name": "Netriva"
+          }
+        },
+        {
+          "@type": "Service", 
+          "name": "Profesyonel Web Sitesi",
+          "description": "10 sayfalık gelişmiş web sitesi",
+          "provider": {
+            "@type": "Organization",
+            "name": "Netriva"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Premium E-ticaret",
+          "description": "Tam özellikli e-ticaret çözümü",
+          "provider": {
+            "@type": "Organization", 
+            "name": "Netriva"
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%234F81FF'/><text x='50%' y='50%' text-anchor='middle' dy='.3em' font-size='80' fill='white'>N</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="styles_new.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%234F81FF'/><text x='50%' y='50%' text-anchor='middle' dy='.3em' font-size='50' fill='white'>N</text></svg>">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles_new.css" as="style">
+    <link rel="preload" href="script_new.js" as="script">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <!-- Header -->
@@ -321,76 +401,4 @@
                             <div class="value-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h4>Güven</h4>
-                            <p>Güvenilir ve profesyonel hizmet</p>
-                        </div>
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <h4>Tasarım</h4>
-                            <p>Modern ve kullanıcı dostu arayüzler</p>
-                        </div>
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <h4>Destek</h4>
-                            <p>7/24 teknik destek hizmeti</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="why-choose">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Neden Bizi Tercih Etmelisiniz?</h2>
-                <p class="section-subtitle">Dijital dünyadaki deneyimimiz ve kaliteli hizmet anlayışımızla fark yaratıyoruz</p>
-            </div>
-            <div class="benefits">
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobil Uyumlu</h3>
-                    <p>Tüm cihazlarda mükemmel görünüm ve performans</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>SEO Uyumlu</h3>
-                    <p>Google'da üst sıralarda yer almanızı sağlıyoruz</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Hızlı Teslimat</h3>
-                    <p>Proje sürelerimize sadık kalıyoruz</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>7/24 Destek</h3>
-                    <p>Her zaman yanınızdayız, sorunlarınızı çözüyoruz</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="referanslar">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Müşteri Yorumları</h2>
-                <p class="section-subtitle">Birlikte çalıştığımız müşterilerimizin deneyimleri</p>
-            </div>
-            <div class="testimonials__grid">
-                <div class="testimonial-card">
-                   
+     
