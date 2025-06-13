@@ -1,0 +1,212 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1B2A;stop-opacity:0.05"/>
+      <stop offset="50%" style="stop-color:#3A86FF;stop-opacity:0.03"/>
+      <stop offset="100%" style="stop-color:#0D1B2A;stop-opacity:0.05"/>
+    </linearGradient>
+    
+    <radialGradient id="nodeGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3A86FF;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#3A86FF;stop-opacity:0.2"/>
+    </radialGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#backgroundGradient)"/>
+  
+  <!-- Network Nodes -->
+  <g opacity="0.6">
+    <!-- Large Central Node -->
+    <circle cx="960" cy="540" r="8" fill="url(#nodeGradient)" filter="url(#glow)">
+      <animate attributeName="r" values="6;10;6" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Secondary Nodes -->
+    <circle cx="760" cy="340" r="5" fill="#3A86FF" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    
+    <circle cx="1160" cy="340" r="5" fill="#3A86FF" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    
+    <circle cx="760" cy="740" r="5" fill="#3A86FF" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    
+    <circle cx="1160" cy="740" r="5" fill="#3A86FF" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    
+    <!-- Tertiary Nodes -->
+    <circle cx="560" cy="240" r="3" fill="#3A86FF" opacity="0.3"/>
+    <circle cx="1360" cy="240" r="3" fill="#3A86FF" opacity="0.3"/>
+    <circle cx="560" cy="840" r="3" fill="#3A86FF" opacity="0.3"/>
+    <circle cx="1360" cy="840" r="3" fill="#3A86FF" opacity="0.3"/>
+    <circle cx="360" cy="540" r="3" fill="#3A86FF" opacity="0.3"/>
+    <circle cx="1560" cy="540" r="3" fill="#3A86FF" opacity="0.3"/>
+    
+    <!-- Micro Nodes -->
+    <circle cx="660" cy="140" r="2" fill="#3A86FF" opacity="0.2"/>
+    <circle cx="1260" cy="140" r="2" fill="#3A86FF" opacity="0.2"/>
+    <circle cx="660" cy="940" r="2" fill="#3A86FF" opacity="0.2"/>
+    <circle cx="1260" cy="940" r="2" fill="#3A86FF" opacity="0.2"/>
+    <circle cx="260" cy="440" r="2" fill="#3A86FF" opacity="0.2"/>
+    <circle cx="1660" cy="440" r="2" fill="#3A86FF" opacity="0.2"/>
+    <circle cx="260" cy="640" r="2" fill="#3A86FF" opacity="0.2"/>
+    <circle cx="1660" cy="640" r="2" fill="#3A86FF" opacity="0.2"/>
+  </g>
+  
+  <!-- Connection Lines -->
+  <g stroke="#3A86FF" stroke-width="1" fill="none" opacity="0.2">
+    <!-- Central connections -->
+    <line x1="960" y1="540" x2="760" y2="340">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="960" y1="540" x2="1160" y2="340">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="5s" repeatCount="indefinite" begin="1s"/>
+    </line>
+    <line x1="960" y1="540" x2="760" y2="740">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="5s" repeatCount="indefinite" begin="2s"/>
+    </line>
+    <line x1="960" y1="540" x2="1160" y2="740">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="5s" repeatCount="indefinite" begin="3s"/>
+    </line>
+    
+    <!-- Secondary connections -->
+    <line x1="760" y1="340" x2="560" y2="240"/>
+    <line x1="1160" y1="340" x2="1360" y2="240"/>
+    <line x1="760" y1="740" x2="560" y2="840"/>
+    <line x1="1160" y1="740" x2="1360" y2="840"/>
+    <line x1="760" y1="340" x2="360" y2="540"/>
+    <line x1="1160" y1="340" x2="1560" y2="540"/>
+    <line x1="760" y1="740" x2="360" y2="540"/>
+    <line x1="1160" y1="740" x2="1560" y2="540"/>
+    
+    <!-- Outer connections -->
+    <line x1="560" y1="240" x2="660" y2="140"/>
+    <line x1="1360" y1="240" x2="1260" y2="140"/>
+    <line x1="560" y1="840" x2="660" y2="940"/>
+    <line x1="1360" y1="840" x2="1260" y2="940"/>
+    <line x1="360" y1="540" x2="260" y2="440"/>
+    <line x1="360" y1="540" x2="260" y2="640"/>
+    <line x1="1560" y1="540" x2="1660" y2="440"/>
+    <line x1="1560" y1="540" x2="1660" y2="640"/>
+  </g>
+  
+  <!-- Floating Data Particles -->
+  <g fill="#3A86FF" opacity="0.3">
+    <circle cx="400" cy="200" r="1">
+      <animateMotion dur="20s" repeatCount="indefinite">
+        <path d="M0,0 Q200,100 400,0 Q600,-100 800,0"/>
+      </animateMotion>
+    </circle>
+    
+    <circle cx="1520" cy="880" r="1">
+      <animateMotion dur="25s" repeatCount="indefinite">
+        <path d="M0,0 Q-200,-100 -400,0 Q-600,100 -800,0"/>
+      </animateMotion>
+    </circle>
+    
+    <circle cx="200" cy="600" r="1">
+      <animateMotion dur="30s" repeatCount="indefinite">
+        <path d="M0,0 Q100,-200 0,-400 Q-100,-600 0,-800"/>
+      </animateMotion>
+    </circle>
+    
+    <circle cx="1720" cy="480" r="1">
+      <animateMotion dur="35s" repeatCount="indefinite">
+        <path d="M0,0 Q-100,200 0,400 Q100,600 0,800"/>
+      </animateMotion>
+    </circle>
+  </g>
+  
+  <!-- Geometric Shapes -->
+  <g stroke="#3A86FF" stroke-width="1" fill="none" opacity="0.1">
+    <!-- Large hexagon -->
+    <polygon points="960,200 1060,250 1060,350 960,400 860,350 860,250" 
+             transform="rotate(45 960 300)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="0 960 300;360 960 300" 
+                        dur="60s" 
+                        repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Medium triangles -->
+    <polygon points="300,300 350,200 400,300" 
+             transform="rotate(0 350 250)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="0 350 250;-360 350 250" 
+                        dur="45s" 
+                        repeatCount="indefinite"/>
+    </polygon>
+    
+    <polygon points="1520,780 1570,680 1620,780" 
+             transform="rotate(0 1570 730)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="0 1570 730;360 1570 730" 
+                        dur="50s" 
+                        repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Small squares -->
+    <rect x="150" y="750" width="40" height="40" 
+          transform="rotate(0 170 770)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="0 170 770;360 170 770" 
+                        dur="40s" 
+                        repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="1730" y="290" width="40" height="40" 
+          transform="rotate(0 1750 310)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="0 1750 310;-360 1750 310" 
+                        dur="42s" 
+                        repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Code-like elements -->
+  <g fill="#3A86FF" opacity="0.15" font-family="monospace" font-size="12">
+    <text x="100" y="100">&lt;/&gt;</text>
+    <text x="1800" y="100">{}</text>
+    <text x="100" y="980">[]</text>
+    <text x="1800" y="980">( )</text>
+    
+    <!-- Animated code snippets -->
+    <text x="50" y="400" opacity="0">
+      function() { return success; }
+      <animate attributeName="opacity" values="0;0.3;0" dur="8s" repeatCount="indefinite"/>
+    </text>
+    
+    <text x="1650" y="680" opacity="0">
+      .responsive { display: flex; }
+      <animate attributeName="opacity" values="0;0.3;0" dur="10s" repeatCount="indefinite" begin="2s"/>
+    </text>
+  </g>
+  
+  <!-- Subtle grid overlay -->
+  <defs>
+    <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#3A86FF" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+</svg>
