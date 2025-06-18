@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Hizmetleri - Profesyonel ve Kurumsal Web Çözümleri | Netriva</title>
+    <meta name="description" content="Kurumsal web tasarımı, landing page ve web sitesi yenileme hizmetleri. Modern teknolojilerle profesyonel web çözümleri sunuyoruz.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D1B2A',
+                        secondary: '#F8F9FA',
+                        accent: '#3A86FF',
+                        text: '#1B263B',
+                        border: '#E0E1DD'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-secondary">
+    <!-- Header -->
+    <header id="header" class="fixed w-full top-0 z-50 bg-primary transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="../assets/images/logo.png" alt="Netriva Logo" class="h-10 w-auto">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="../index.html" class="text-white hover:text-accent transition-colors duration-300">Ana Sayfa</a>
+                    <a href="../about.html" class="text-white hover:text-accent transition-colors duration-300">Hakkımızda</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="text-accent flex items-center">
+                            Hizmetlerimiz
+                            <i data-feather="chevron-down" class="ml-1 w-4 h-4"></i>
+                        </button>
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2">
+                            <div class="py-2">
+                                <a href="web-services.html" class="block px-4 py-3 text-accent font-medium bg-secondary">Web Hizmetleri</a>
+                                <a href="ecommerce-services.html" class="block px-4 py-3 text-text hover:bg-secondary transition-colors">E-Ticaret Hizmetleri</a>
+                                <a href="mobile-systems.html" class="block px-4 py-3 text-text hover:bg-secondary transition-colors">Mobil & Dinamik Sistemler</a>
+                                <a href="extra-features.html" class="block px-4 py-3 text-text hover:bg-secondary transition-colors">Ekstra Özellikler</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="../portfolio.html" class="text-white hover:text-accent transition-colors duration-300">Portfolyo</a>
+                    <a href="../blog.html" class="text-white hover:text-accent transition-colors duration-300">Blog</a>
+                    <a href="../contact.html" class="text-white hover:text-accent transition-colors duration-300">İletişim</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="../contact.html" class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105">
+                        Teklif Al
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-white" id="mobile-menu-button">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-primary mb-6" data-aos="fade-up">
+                    Profesyonel ve Kurumsal<br>
+                    <span class="text-accent">Web Çözümleri</span>
+                </h1>
+                <p class="font-inter text-lg md:text-xl text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="200">
+                    Şirketlerin dijital kimliğini yansıtan, modern ve prestijli web siteleri ile markanızı dijital dünyada öne çıkarın.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                    <a href="../contact.html" class="bg-accent text-white px-8 py-4 rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 font-medium">
+                        Ücretsiz Teklif Al
+                    </a>
+                    <a href="#services-detail" class="border-2 border-accent text-accent px-8 py-4 rounded-lg hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 font-medium">
+                        Hizmetleri İncele
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detail Section -->
+    <section id="services-detail" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-primary mb-4" data-aos="fade-up">
+                    Web Hizmetlerimiz
+                </h2>
+                <p class="font-inter text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Markanızın dijital varlığını güçlendiren kapsamlı web çözümleri sunuyoruz.
+                </p>
+            </div>
+            
+            <div class="space-y-16">
+                <!-- Kurumsal Web Tasarımı -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-feather="globe" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="font-poppins font-bold text-2xl md:text-3xl text-primary mb-4">Kurumsal Web Tasarımı</h3>
+                        <p class="font-inter text-gray-600 mb-6 leading-relaxed">
+                            Şirketinizin profesyonel kimliğini yansıtan, modern ve kullanıcı dostu kurumsal web siteleri tasarlıyoruz. 
+                            Markanızın değerlerini dijital ortamda en etkili şekilde sunarak, müşterilerinizde güven oluşturuyoruz.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Responsive tasarım (tüm cihazlarda uyumlu)
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                SEO uyumlu yapı
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Hızlı yükleme süreleri
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Güvenlik protokolleri
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="bg-white rounded-lg p-8 shadow-lg">
+                            <div class="h-64 bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg flex items-center justify-center">
+                                <i data-feather="monitor" class="w-20 h-20 text-accent"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Landing Page Tasarımı -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right" class="order-2 lg:order-1">
+                        <div class="bg-white rounded-lg p-8 shadow-lg">
+                            <div class="h-64 bg-gradient-to-br from-green-400/20 to-blue-500/20 rounded-lg flex items-center justify-center">
+                                <i data-feather="target" class="w-20 h-20 text-green-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="order-1 lg:order-2">
+                        <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-feather="target" class="w-8 h-8 text-green-500"></i>
+                        </div>
+                        <h3 class="font-poppins font-bold text-2xl md:text-3xl text-primary mb-4">Landing Page Tasarımı</h3>
+                        <p class="font-inter text-gray-600 mb-6 leading-relaxed">
+                            Pazarlama kampanyalarınız için özel olarak tasarlanmış, yüksek dönüşüm odaklı landing page'ler geliştiriyoruz. 
+                            Her sayfa, belirli bir hedefe yönelik optimize edilmiş kullanıcı deneyimi sunar.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Dönüşüm odaklı tasarım
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                A/B test desteği
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Analitik entegrasyonu
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Form optimizasyonu
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Web Sitesi Yenileme -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-feather="refresh-cw" class="w-8 h-8 text-purple-500"></i>
+                        </div>
+                        <h3 class="font-poppins font-bold text-2xl md:text-3xl text-primary mb-4">Web Sitesi Yenileme</h3>
+                        <p class="font-inter text-gray-600 mb-6 leading-relaxed">
+                            Mevcut web sitenizi günümüz teknolojisi ve trendlerine uygun hale getiriyoruz. Eski teknolojilerle 
+                            geliştirilmiş sitelerinizi modern, hızlı ve güvenli platformlara taşıyoruz.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Modern teknoloji migrasyonu
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Performans optimizasyonu
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Güvenlik güncellemeleri
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                İçerik korunması
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="bg-white rounded-lg p-8 shadow-lg">
+                            <div class="h-64 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-lg flex items-center justify-center">
+                                <i data-feather="refresh-cw" class="w-20 h-20 text-purple-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bakım, Destek ve Güvenlik -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right" class="order-2 lg:order-1">
+                        <div class="bg-white rounded-lg p-8 shadow-lg">
+                            <div class="h-64 bg-gradient-to-br from-orange-400/20 to-red-500/20 rounded-lg flex items-center justify-center">
+                                <i data-feather="shield" class="w-20 h-20 text-orange-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="order-1 lg:order-2">
+                        <div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-feather="shield" class="w-8 h-8 text-orange-500"></i>
+                        </div>
+                        <h3 class="font-poppins font-bold text-2xl md:text-3xl text-primary mb-4">Bakım, Destek ve Güvenlik</h3>
+                        <p class="font-inter text-gray-600 mb-6 leading-relaxed">
+                            Web sitenizin 7/24 kesintisiz çalışmasını sağlıyoruz. Düzenli yedekleme, güvenlik güncellemeleri 
+                            ve teknik destek hizmetleriyle sitenizin güvenliğini garanti ediyoruz.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                7/24 teknik destek
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Otomatik yedekleme
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Güvenlik izleme
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                Performans raporları
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-primary mb-4" data-aos="fade-up">
+                    Süreçlerimiz
+                </h2>
+                <p class="font-inter text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Web projelerinizi sistematik bir yaklaşımla hayata geçiriyoruz.
+                </p>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block"></div>
+                    
+                    <!-- Process Steps -->
+                    <div class="space-y-12">
+                        <!-- Step 1: Keşif -->
+                        <div class="flex flex-col md:flex-row items-start" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 md:mb-0 md:mr-8 relative z-10">
+                                1
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-poppins font-semibold text-xl text-primary mb-3">Keşif ve Analiz</h3>
+                                <p class="font-inter text-gray-600 mb-4">
+                                    İhtiyaçlarınızı detaylıca analiz ederek proje hedeflerini ve gereksinimlerini belirliyoruz. 
+                                    Hedef kitlenizi, rakiplerinizi ve sektör trendlerini inceliyoruz.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">İhtiyaç Analizi</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Hedef Kitle</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Rakip Analizi</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Tasarım -->
+                        <div class="flex flex-col md:flex-row items-start" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 md:mb-0 md:mr-8 relative z-10">
+                                2
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-poppins font-semibold text-xl text-primary mb-3">Tasarım ve Planlama</h3>
+                                <p class="font-inter text-gray-600 mb-4">
+                                    Kullanıcı deneyimi odaklı wireframe'ler ve mockup'lar oluşturuyoruz. Markanıza uygun 
+                                    görsel kimlik ve tasarım dilini geliştiriyoruz.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Wireframe</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">UI/UX Tasarım</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Prototipleme</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Geliştirme -->
+                        <div class="flex flex-col md:flex-row items-start" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 md:mb-0 md:mr-8 relative z-10">
+                                3
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-poppins font-semibold text-xl text-primary mb-3">Geliştirme</h3>
+                                <p class="font-inter text-gray-600 mb-4">
+                                    Modern teknolojiler kullanarak responsive, hızlı ve güvenli web sitenizi geliştiriyoruz. 
+                                    Kodlama sürecinde en iyi practices'leri uyguluyoruz.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Frontend</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Backend</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Database</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Test -->
+                        <div class="flex flex-col md:flex-row items-start" data-aos="fade-up" data-aos-delay="400">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 md:mb-0 md:mr-8 relative z-10">
+                                4
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-poppins font-semibold text-xl text-primary mb-3">Test ve Optimizasyon</h3>
+                                <p class="font-inter text-gray-600 mb-4">
+                                    Kapsamlı testler yaparak tüm fonksiyonların doğru çalıştığından emin oluyoruz. 
+                                    Performans optimizasyonu ve güvenlik testleri gerçekleştiriyoruz.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Fonksiyon Testi</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Performans</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Güvenlik</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 5: Lansman -->
+                        <div class="flex flex-col md:flex-row items-start" data-aos="fade-up" data-aos-delay="500">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 md:mb-0 md:mr-8 relative z-10">
+                                5
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-poppins font-semibold text-xl text-primary mb-3">Lansman ve Destek</h3>
+                                <p class="font-inter text-gray-600 mb-4">
+                                    Web sitenizi canlıya alıyor ve kullanıcı eğitimi sağlıyoruz. Sürekli destek ve 
+                                    bakım hizmetleriyle sitenizin sorunsuz çalışmasını garanti ediyoruz.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Deploy</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Eğitim</span>
+                                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Sürekli Destek</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-primary mb-4" data-aos="fade-up">
+                    Kullandığımız Teknolojiler
+                </h2>
+                <p class="font-inter text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Modern ve güvenilir teknolojilerle projelerinizi geleceğe hazır halde geliştiriyoruz.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <!-- HTML5 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="code" class="w-8 h-8 text-orange-500"></i>
+                    </div>
+                    <h3 class="font-inter font-medium text-text">HTML5</h3>
+                </div>
+                
+                <!-- CSS3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="layers" class="w-8 h-8 text-blue-500"></i>
+                    </div>
+                    <h3 class="font-inter font-medium text-text">CSS3</h3>
+                </div>
+                
+                <!-- JavaScript -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="zap" class="w-8 h-8 text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-inter font-medium text-text">JavaScript</h3>
+                </div>
+                
+                <!-- React -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="refresh-cw" class="w-8 h-8 text-cyan-500"></i>
+                    </div>
+                    <h3 class="font-inter font-medium text-text">React.js</h3>
+                </div>
+                
+                <!-- Vue -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="triangle" class="w-8 h-8 text-green-500"></i>
+                    </div>
+                    <h3 class="font-inter font-medium text-text">Vue.js</h3>
+                </div>
+                
+                <!-- PHP -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="server" class="w-8 h-8 text-purple-500"></i>
+                    </div>
+                    <h3 class="font-inter font-medium text-text">PHP</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-6" data-aos="fade-up">
+                Web Projenizi Hayata Geçirelim
+            </h2>
+            <p class="font-inter text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
+                Profesyonel web tasarım hizmetlerimizle markanızı dijital dünyada öne çıkarın. Ücretsiz teklif almak için hemen iletişime geçin.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="../contact.html" class="bg-accent text-white px-8 py-4 rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 font-medium">
+                    Ücretsiz Teklif Al
+                </a>
+                <a href="../portfolio.html" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105 font-medium">
+                    Projelerimizi İncele
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <img src="../assets/images/logo.png" alt="Netriva Logo" class="h-10 w-auto mb-4">
+                    <p class="font-inter text-gray-300 mb-6">
+                        Dijital dünyada güvenilir ortağınız. Yenilikçi teknoloji çözümleriyle geleceği bugünden inşa ediyoruz.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Site Map -->
+                <div>
+                    <h3 class="font-poppins font-semibold text-lg mb-4">Keşfet</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Ana Sayfa</a></li>
+                        <li><a href="../about.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Hakkımızda</a></li>
+                        <li><a href="../portfolio.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Portfolyo</a></li>
+                        <li><a href="../blog.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Blog</a></li>
+                        <li><a href="../contact.html" class="text-gray-300 hover:text-accent transition-colors duration-300">İletişim</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="font-poppins font-semibold text-lg mb-4">Hizmetler</h3>
+                    <ul class="space-y-2">
+                        <li><a href="web-services.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Web Hizmetleri</a></li>
+                        <li><a href="ecommerce-services.html" class="text-gray-300 hover:text-accent transition-colors duration-300">E-Ticaret Hizmetleri</a></li>
+                        <li><a href="mobile-systems.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Mobil & Dinamik Sistemler</a></li>
+                        <li><a href="extra-features.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Ekstra Özellikler</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-poppins font-semibold text-lg mb-4">İletişime Geçin</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i data-feather="map-pin" class="w-5 h-5 text-accent mr-3"></i>
+                            <span class="text-gray-300">Kahramanmaraş, Türkiye</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="phone" class="w-5 h-5 text-accent mr-3"></i>
+                            <a href="tel:+905442577760" class="text-gray-300 hover:text-accent transition-colors duration-300">+90 544 257 77 60</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="mail" class="w-5 h-5 text-accent mr-3"></i>
+                            <a href="mailto:yagizberkworks@gmail.com" class="text-gray-300 hover:text-accent transition-colors duration-300">yagizberkworks@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 text-sm">
+                        © 2025 Netriva Web Yazılım. Tüm Hakları Saklıdır.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="assets/pdfs/KVKK.pdf" class="text-gray-300 hover:text-accent text-sm transition-colors duration-300">KVKK</a>
+                        <a href="assets/pdfs/Gizlilik.pdf" class="text-gray-300 hover:text-accent text-sm transition-colors duration-300">Gizlilik Politikası</a>
+                        <a href="#" class="text-gray-300 hover:text-accent text-sm transition-colors duration-300">Çerez Politikası</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

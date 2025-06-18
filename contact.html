@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Netriva Web Yazılım</title>
+    <meta name="description" content="Netriva Web Yazılım ile iletişime geçin. Projeleriniz için ücretsiz teklif alın ve uzman ekibimizle çalışmaya başlayın.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D1B2A',
+                        secondary: '#F8F9FA',
+                        accent: '#3A86FF',
+                        text: '#1B263B',
+                        border: '#E0E1DD'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-secondary">
+    <!-- Header -->
+    <header id="header" class="fixed w-full top-0 z-50 bg-primary transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/images/logo.png" alt="Netriva Logo" class="h-10 w-auto">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-accent transition-colors duration-300">Ana Sayfa</a>
+                    <a href="about.html" class="text-white hover:text-accent transition-colors duration-300">Hakkımızda</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="text-white hover:text-accent transition-colors duration-300 flex items-center">
+                            Hizmetlerimiz
+                            <i data-feather="chevron-down" class="ml-1 w-4 h-4"></i>
+                        </button>
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2">
+                            <div class="py-2">
+                                <a href="services/web-services.html" class="block px-4 py-3 text-text hover:bg-secondary transition-colors">Web Hizmetleri</a>
+                                <a href="services/ecommerce-services.html" class="block px-4 py-3 text-text hover:bg-secondary transition-colors">E-Ticaret Hizmetleri</a>
+                                <a href="services/mobile-systems.html" class="block px-4 py-3 text-text hover:bg-secondary transition-colors">Mobil & Dinamik Sistemler</a>
+                                <a href="services/extra-features.html" class="block px-4 py-3 text-text hover:bg-secondary transition-colors">Ekstra Özellikler</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="portfolio.html" class="text-white hover:text-accent transition-colors duration-300">Portfolyo</a>
+                    <a href="blog.html" class="text-white hover:text-accent transition-colors duration-300">Blog</a>
+                    <a href="contact.html" class="text-accent">İletişim</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="contact.html" class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105">
+                        Teklif Al
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-white" id="mobile-menu-button">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden bg-primary border-t border-gray-700 hidden">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html" class="block text-white hover:text-accent py-2">Ana Sayfa</a>
+                <a href="about.html" class="block text-white hover:text-accent py-2">Hakkımızda</a>
+                <div class="py-2">
+                    <button class="text-white hover:text-accent flex items-center w-full" id="mobile-services-toggle">
+                        Hizmetlerimiz
+                        <i data-feather="chevron-down" class="ml-1 w-4 h-4"></i>
+                    </button>
+                    <div id="mobile-services-menu" class="ml-4 mt-2 space-y-2 hidden">
+                        <a href="services/web-services.html" class="block text-gray-300 hover:text-accent py-1">Web Hizmetleri</a>
+                        <a href="services/ecommerce-services.html" class="block text-gray-300 hover:text-accent py-1">E-Ticaret Hizmetleri</a>
+                        <a href="services/mobile-systems.html" class="block text-gray-300 hover:text-accent py-1">Mobil & Dinamik Sistemler</a>
+                        <a href="services/extra-features.html" class="block text-gray-300 hover:text-accent py-1">Ekstra Özellikler</a>
+                    </div>
+                </div>
+                <a href="portfolio.html" class="block text-white hover:text-accent py-2">Portfolyo</a>
+                <a href="blog.html" class="block text-white hover:text-accent py-2">Blog</a>
+                <a href="contact.html" class="block text-accent py-2">İletişim</a>
+                <a href="contact.html" class="block bg-accent text-white px-4 py-2 rounded-lg text-center mt-4">Teklif Al</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h1 class="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-primary mb-6" data-aos="fade-up">
+                    İletişime Geçin
+                </h1>
+                <p class="font-inter text-lg md:text-xl text-gray-600 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Dijital dönüşüm yolculuğunuzda size eşlik etmek için buradayız. Projenizi birlikte hayata geçirelim.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="py-10 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Phone -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="phone" class="w-8 h-8 text-accent"></i>
+                    </div>
+                    <h3 class="font-poppins font-semibold text-xl text-primary mb-3">Telefon</h3>
+                    <p class="text-gray-600 mb-4">Hemen arayın, uzmanlarımızla konuşun</p>
+                    <a href="tel:+905442577760" class="text-accent hover:text-blue-600 font-medium transition-colors duration-300">
+                        +90 544 257 77 60
+                    </a>
+                </div>
+                
+                <!-- Email -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="mail" class="w-8 h-8 text-accent"></i>
+                    </div>
+                    <h3 class="font-poppins font-semibold text-xl text-primary mb-3">E-posta</h3>
+                    <p class="text-gray-600 mb-4">24 saat içinde size dönüş yaparız</p>
+                    <a href="mailto:yagizberkworks@gmail.com" class="text-accent hover:text-blue-600 font-medium transition-colors duration-300">
+                        yagizberkworks@gmail.com
+                    </a>
+                </div>
+                
+                <!-- Location -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="map-pin" class="w-8 h-8 text-accent"></i>
+                    </div>
+                    <h3 class="font-poppins font-semibold text-xl text-primary mb-3">Ofisimiz</h3>
+                    <p class="text-gray-600 mb-4">Randevu alarak ziyaret edebilirsiniz</p>
+                    <p class="text-accent font-medium">
+                        Kahramanmaraş, Türkiye
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-primary mb-4" data-aos="fade-up">
+                        Projenizi Anlatan
+                    </h2>
+                    <p class="font-inter text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                        Aşağıdaki formu doldurarak projeniz hakkında detayları paylaşın. Size en uygun çözümü sunalım.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-border" data-aos="fade-up" data-aos-delay="300">
+                    <form class="space-y-6" id="contact-form">
+                        <!-- Personal Information -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-text font-medium mb-2">Ad *</label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent transition-colors duration-300"
+                                       placeholder="Adınız">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-text font-medium mb-2">Soyad *</label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                       class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent transition-colors duration-300"
+                                       placeholder="Soyadınız">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-text font-medium mb-2">E-posta *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent transition-colors duration-300"
+                                       placeholder="ornek@email.com">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-text font-medium mb-2">Telefon</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent transition-colors duration-300"
+                                       placeholder="+90 555 123 45 67">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="company" class="block text-text font-medium mb-2">Şirket</label>
+                                <input type="text" id="company" name="company" 
+                                       class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent transition-colors duration-300"
+                                       placeholder="Şirket adınız">
+                            </div>
+                            <div>
+                                <label for="budget" class="block text-text font-medium mb-2">Tahmini Bütçe</label>
+                                <select id="budget" name="budget" 
+                                        class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent transition-colors duration-300">
+                                    <option value="">Bütçe seçin</option>
+                                    <option value="5000-15000">5.000₺ - 15.000₺</option>
+                                    <option value="15000-30000">15.000₺ - 30.000₺</option>
+                                    <option value="30000-50000">30.000₺ - 50.000₺</option>
+                                    <option value="50000+">50.000₺+</option>
+                                    <option value="custom">Özel bütçe</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Details -->
+                        <div>
+                            <label for="service" class="block text-text font-medium mb-2">İhtiyacınız Olan Hizmet *</label>
+                            <select id="service" name="service" required 
+                                    class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent transition-colors duration-300">
+                                <option value="">Hizmet seçin</option>
+                                <option value="web-design">Web Tasarım</option>
+                                <option value="ecommerce">E-Ticaret</option>
+                                <option value="mobile-app">Mobil Uygulama</option>
+                                <option value="crm-erp">CRM/ERP Sistemi</option>
+                                <option value="seo">SEO Hizmetleri</option>
+                                <option value="maintenance">Bakım ve Destek</option>
+                                <option value="consulting">Danışmanlık</option>
+                                <option value="other">Diğer</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="timeline" class="block text-text font-medium mb-2">Proje Zaman Çizelgesi</label>
+                            <select id="timeline" name="timeline" 
+                                    class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent transition-colors duration-300">
+                                <option value="">Zaman çizelgesi seçin</option>
+                                <option value="asap">En kısa sürede</option>
+                                <option value="1-month">1 ay içinde</option>
+                                <option value="2-3-months">2-3 ay içinde</option>
+                                <option value="6-months">6 ay içinde</option>
+                                <option value="flexible">Esnek</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-text font-medium mb-2">Proje Detayları *</label>
+                            <textarea id="message" name="message" rows="6" required 
+                                      class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent transition-colors duration-300 resize-none"
+                                      placeholder="Projeniz hakkında detaylı bilgi verin. Hedefleriniz, özellikler, referans siteler vb."></textarea>
+                        </div>
+                        
+                        <!-- Consent and Submit -->
+                        <div class="flex items-start">
+                            <input type="checkbox" id="consent" name="consent" required 
+                                   class="mt-1 mr-3 text-accent border-border rounded focus:ring-accent">
+                            <label for="consent" class="text-sm text-gray-600">
+                                <a href="#" class="text-accent hover:text-blue-600">KVKK Gizlilik Politikası</a>'nı okudum ve kabul ediyorum. 
+                                Kişisel verilerimin işlenmesine izin veriyorum.
+                            </label>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" 
+                                    class="bg-accent text-white px-8 py-4 rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 font-medium">
+                                <i data-feather="send" class="w-5 h-5 inline mr-2"></i>
+                                Teklif Talebini Gönder
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-primary mb-4" data-aos="fade-up">
+                    Sıkça Sorulan Sorular
+                </h2>
+                <p class="font-inter text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Müşterilerimizin en çok merak ettiği konuları derledik.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between">
+                            <span class="font-semibold text-primary">Proje süreçleriniz nasıl işliyor?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-400 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600">
+                                Projelerimiz 5 ana aşamadan oluşur: Analiz & Keşif, Planlama & Tasarım, Geliştirme, Test & Optimizasyon, 
+                                Lansman & Destek. Her aşamada müşterilerimizle şeffaf iletişim kurarak projelerini hayata geçiriyoruz.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between">
+                            <span class="font-semibold text-primary">Proje teslim süreleriniz ne kadar?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-400 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600">
+                                Proje süreleri, projenin kapsamına göre değişiklik gösterir. Basit bir kurumsal web sitesi 2-4 hafta, 
+                                e-ticaret platformu 6-8 hafta, mobil uygulama 8-12 hafta sürebilir. Kesin süreyi teklif aşamasında belirliyoruz.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between">
+                            <span class="font-semibold text-primary">Destek hizmetleriniz neler?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-400 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600">
+                                7/24 teknik destek, düzenli yedekleme, güvenlik güncellemeleri, performans izleme, içerik yönetimi eğitimi 
+                                ve kullanıcı desteği sunuyoruz. Ayrıca aylık bakım paketlerimizle sitenizin sürekli güncel kalmasını sağlarız.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                        <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between">
+                            <span class="font-semibold text-primary">Ödeme koşullarınız nasıl?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-400 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600">
+                                Projeler için %50 kapora, %50 teslim ödemesi şeklinde çalışıyoruz. Büyük projeler için taksitli ödeme 
+                                imkanı sunuyoruz. Havale/EFT, kredi kartı ve çek ile ödeme kabul ediyoruz.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                        <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between">
+                            <span class="font-semibold text-primary">Hangi teknolojileri kullanıyorsunuz?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-400 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600">
+                                Web geliştirme için React.js, Vue.js, PHP Laravel; mobil uygulama için React Native, Flutter; 
+                                e-ticaret için özel çözümler ve popüler platformlar kullanıyoruz. En güncel ve güvenilir teknolojilerle çalışırız.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-6" data-aos="fade-up">
+                Hemen Başlayalım
+            </h2>
+            <p class="font-inter text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
+                Dijital dönüşüm yolculuğunuza bugün başlayın. Uzman ekibimizle projenizi hayata geçirin.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="tel:+905442577760" class="bg-accent text-white px-8 py-4 rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 font-medium">
+                    <i data-feather="phone" class="w-5 h-5 inline mr-2"></i>
+                    Hemen Arayın
+                </a>
+                <a href="mailto:yagizberkworks@gmail.com" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105 font-medium">
+                    <i data-feather="mail" class="w-5 h-5 inline mr-2"></i>
+                    E-posta Gönderin
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <img src="assets/images/logo.png" alt="Netriva Logo" class="h-10 w-auto mb-4">
+                    <p class="font-inter text-gray-300 mb-6">
+                        Dijital dünyada güvenilir ortağınız. Yenilikçi teknoloji çözümleriyle geleceği bugünden inşa ediyoruz.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Site Map -->
+                <div>
+                    <h3 class="font-poppins font-semibold text-lg mb-4">Keşfet</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Ana Sayfa</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Hakkımızda</a></li>
+                        <li><a href="portfolio.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Portfolyo</a></li>
+                        <li><a href="blog.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-accent transition-colors duration-300">İletişim</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="font-poppins font-semibold text-lg mb-4">Hizmetler</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services/web-services.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Web Hizmetleri</a></li>
+                        <li><a href="services/ecommerce-services.html" class="text-gray-300 hover:text-accent transition-colors duration-300">E-Ticaret Hizmetleri</a></li>
+                        <li><a href="services/mobile-systems.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Mobil & Dinamik Sistemler</a></li>
+                        <li><a href="services/extra-features.html" class="text-gray-300 hover:text-accent transition-colors duration-300">Ekstra Özellikler</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-poppins font-semibold text-lg mb-4">İletişime Geçin</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i data-feather="map-pin" class="w-5 h-5 text-accent mr-3"></i>
+                            <span class="text-gray-300">Kahramanmaraş, Türkiye</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="phone" class="w-5 h-5 text-accent mr-3"></i>
+                            <a href="tel:+905442577760" class="text-gray-300 hover:text-accent transition-colors duration-300">+90 544 257 77 60</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="mail" class="w-5 h-5 text-accent mr-3"></i>
+                            <a href="mailto:yagizberkworks@gmail.com" class="text-gray-300 hover:text-accent transition-colors duration-300">yagizberkworks@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 text-sm">
+                        © 2025 Netriva Web Yazılım. Tüm Hakları Saklıdır.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="assets/pdfs/KVKK.pdf" class="text-gray-300 hover:text-accent text-sm transition-colors duration-300">KVKK</a>
+                        <a href="assets/pdfs/Gizlilik.pdf" class="text-gray-300 hover:text-accent text-sm transition-colors duration-300">Gizlilik Politikası</a>
+                        <a href="#" class="text-gray-300 hover:text-accent text-sm transition-colors duration-300">Çerez Politikası</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
