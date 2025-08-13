@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStudio - Modern Web Çözümleri</title>
+    <meta name="description" content="Profesyonel web tasarım ve geliştirme hizmetleri ile markanızı dijital dünyada öne çıkarın. Responsive, hızlı ve SEO uyumlu web siteleri.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="#" class="logo-text">
+                            <span class="logo-accent">Yağız</span>.Co
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="nav-desktop">
+                        <div class="nav-links">
+                            <button onclick="scrollToSection('hero')" class="nav-link">Ana Sayfa</button>
+                            <button onclick="scrollToSection('services')" class="nav-link">Hizmetler</button>
+                            <button onclick="scrollToSection('about')" class="nav-link">Hakkımda</button>
+                            <button onclick="scrollToSection('packages')" class="nav-link">Paketler</button>
+                            <button onclick="scrollToSection('faq')" class="nav-link">SSS</button>
+                            <button onclick="scrollToSection('contact')" class="nav-link">İletişim</button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="nav-mobile">
+                        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menüyü aç">
+                            <i data-lucide="menu" class="menu-icon"></i>
+                            <i data-lucide="x" class="close-icon hidden"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation Menu -->
+                <div class="mobile-menu hidden">
+                    <div class="mobile-menu-content">
+                        <button onclick="scrollToSection('hero')" class="mobile-nav-link">Ana Sayfa</button>
+                        <button onclick="scrollToSection('services')" class="mobile-nav-link">Hizmetler</button>
+                        <button onclick="scrollToSection('about')" class="mobile-nav-link">Hakkımda</button>
+                        <button onclick="scrollToSection('packages')" class="mobile-nav-link">Paketler</button>
+                        <button onclick="scrollToSection('faq')" class="mobile-nav-link">SSS</button>
+                        <button onclick="scrollToSection('contact')" class="mobile-nav-link">İletişim</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- Floating shapes background -->
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Modern Web
+                    <span class="hero-accent"> Çözümleri</span>
+                </h1>
+                <p class="hero-description">
+                    Profesyonel web tasarım ve geliştirme hizmetleri ile markanızı dijital dünyada öne çıkarın. 
+                    Responsive, hızlı ve SEO uyumlu web siteleri.
+                </p>
+                <div class="hero-buttons">
+                    <button onclick="scrollToSection('contact')" class="btn btn-primary">
+                        Hemen Başlayın
+                    </button>
+                    <button onclick="scrollToSection('about')" class="btn btn-outline">
+                        Daha Fazla Bilgi
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <button onclick="scrollToSection('services')" class="scroll-btn">
+                <i data-lucide="chevron-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hizmetlerimiz</h2>
+                <p class="section-description">
+                    Modern teknolojiler kullanarak size en iyi web çözümlerini sunuyoruz.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-gradient="from-gray-50 to-gray-100">
+                    <div class="service-icon">
+                        <i data-lucide="laptop"></i>
+                    </div>
+                    <h3 class="service-title">Web Tasarım</h3>
+                    <p class="service-description">Modern, kullanıcı dostu ve responsive web tasarımları ile markanızı dijital dünyada öne çıkarın.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i>Responsive Tasarım</li>
+                        <li><i data-lucide="check"></i>Modern UI/UX</li>
+                        <li><i data-lucide="check"></i>Hızlı Yükleme</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-gradient="from-gray-100 to-stone-50">
+                    <div class="service-icon">
+                        <i data-lucide="code"></i>
+                    </div>
+                    <h3 class="service-title">Web Geliştirme</h3>
+                    <p class="service-description">React, Vue.js ve diğer modern teknolojilerle güçlü web uygulamaları geliştiriyoruz.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i>Modern Framework'ler</li>
+                        <li><i data-lucide="check"></i>API Entegrasyonu</li>
+                        <li><i data-lucide="check"></i>Güvenli Kodlama</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-gradient="from-stone-50 to-gray-50">
+                    <div class="service-icon">
+                        <i data-lucide="search"></i>
+                    </div>
+                    <h3 class="service-title">SEO Optimizasyon</h3>
+                    <p class="service-description">Arama motorlarında üst sıralarda yer almanız için teknik ve içerik SEO hizmetleri.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i>Teknik SEO</li>
+                        <li><i data-lucide="check"></i>İçerik Optimizasyonu</li>
+                        <li><i data-lucide="check"></i>Performance İyileştirme</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-gradient="from-gray-50 to-neutral-50">
+                    <div class="service-icon">
+                        <i data-lucide="shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">E-Ticaret</h3>
+                    <p class="service-description">Güvenli, hızlı ve kullanıcı dostu e-ticaret siteleri ile online satışlarınızı artırın.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i>Güvenli Ödeme</li>
+                        <li><i data-lucide="check"></i>Stok Yönetimi</li>
+                        <li><i data-lucide="check"></i>Mobil Uyumlu</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-gradient="from-neutral-50 to-gray-100">
+                    <div class="service-icon">
+                        <i data-lucide="wrench"></i>
+                    </div>
+                    <h3 class="service-title">Bakım & Destek</h3>
+                    <p class="service-description">Web sitenizin sürekli güncel, güvenli ve sorunsuz çalışması için teknik destek.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i>7/24 Destek</li>
+                        <li><i data-lucide="check"></i>Güvenlik Güncellemeleri</li>
+                        <li><i data-lucide="check"></i>Performance İzleme</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-gradient="from-gray-100 to-gray-50">
+                    <div class="service-icon">
+                        <i data-lucide="smartphone"></i>
+                    </div>
+                    <h3 class="service-title">Mobil Uygulama</h3>
+                    <p class="service-description">React Native ve Flutter ile iOS ve Android için cross-platform mobil uygulamalar.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i>Cross-Platform</li>
+                        <li><i data-lucide="check"></i>Native Performance</li>
+                        <li><i data-lucide="check"></i>App Store Yayınlama</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Modern workspace with computer and design tools" 
+                         class="about-img">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">Hakkımda</h2>
+                    <p class="about-description">
+                        5+ yıllık deneyimle modern web teknolojileri konusunda uzmanlaşmış bir geliştiriciyim. 
+                        Müşteri memnuniyeti odaklı çalışarak, her projeyi benzersiz ihtiyaçlara göre özelleştiriyorum.
+                    </p>
+                    <p class="about-description">
+                        React, Vue.js, Node.js ve Javascript gibi modern teknolojilerle çalışarak, 
+                        ölçeklenebilir ve sürdürülebilir web çözümleri geliştiriyorum.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number stat-dark">50+</div>
+                            <div class="stat-label">Tamamlanan Proje</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number stat-vintage">5+</div>
+                            <div class="stat-label">Yıl Deneyim</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number stat-dark">50+</div>
+                            <div class="stat-label">Mutlu Müşteri</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number stat-vintage">24/7</div>
+                            <div class="stat-label">Destek</div>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h3 class="tech-title">Kullandığım Teknolojiler</h3>
+                        <div class="tech-list">
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Vue.js</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">TypeScript</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">SQL</span>
+                            <span class="tech-item">Javascript</span>
+                            <span class="tech-item">Java</span>
+                            <span class="tech-item">CSS</span>
+                            <span class="tech-item">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Paketler</h2>
+                <p class="section-description">
+                    İhtiyaçlarınıza uygun farklı paket seçenekleri ile size en uygun çözümü sunuyoruz.
+                </p>
+            </div>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-name">Başlangıç</h3>
+                        <div class="package-price">₺10,000</div>
+                        <div class="package-description">Tek seferlik ödeme</div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i data-lucide="check"></i>5 Sayfa Web Sitesi</li>
+                        <li><i data-lucide="check"></i>Responsive Tasarım</li>
+                        <li><i data-lucide="check"></i>Temel SEO</li>
+                        <li><i data-lucide="check"></i>İletişim Formu</li>
+                        <li><i data-lucide="check"></i>1 Ay Ücretsiz Destek</li>
+                    </ul>
+                    <button class="package-btn">Paket Seç</button>
+                </div>
+
+                <div class="package-card popular">
+                    <div class="popular-badge">Popüler</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Profesyonel</h3>
+                        <div class="package-price">₺18,000</div>
+                        <div class="package-description">Tek seferlik ödeme</div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i data-lucide="check"></i>10 Sayfa Web Sitesi</li>
+                        <li><i data-lucide="check"></i>Responsive Tasarım</li>
+                        <li><i data-lucide="check"></i>Gelişmiş SEO</li>
+                        <li><i data-lucide="check"></i>CMS Panel</li>
+                        <li><i data-lucide="check"></i>E-ticaret Entegrasyonu</li>
+                        <li><i data-lucide="check"></i>3 Ay Ücretsiz Destek</li>
+                    </ul>
+                    <button class="package-btn">Paket Seç</button>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-name">Kurumsal</h3>
+                        <div class="package-price">₺25,000</div>
+                        <div class="package-description">Tek seferlik ödeme</div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i data-lucide="check"></i>Sınırsız Sayfa</li>
+                        <li><i data-lucide="check"></i>Özel Tasarım</li>
+                        <li><i data-lucide="check"></i>Profesyonel SEO</li>
+                        <li><i data-lucide="check"></i>Gelişmiş CMS</li>
+                        <li><i data-lucide="check"></i>Çoklu Dil Desteği</li>
+                        <li><i data-lucide="check"></i>6 Ay Ücretsiz Destek</li>
+                    </ul>
+                    <button class="package-btn">Paket Seç</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+                <p class="section-description">
+                    En çok merak edilen soruların cevaplarını burada bulabilirsiniz.
+                </p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Bir web sitesi ne kadar sürede tamamlanır?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Proje karmaşıklığına bağlı olarak, basit bir web sitesi 1-2 hafta, karmaşık e-ticaret siteleri ise 4-8 hafta sürebilir. Her projeyi başlamadan önce detaylı bir timeline sunuyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Web sitemi kendim güncelleyebilir miyim?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Evet! Size kullanıcı dostu bir yönetim paneli sağlıyoruz. Eğitim videoları ve dokümantasyonla kendi içeriklerinizi kolayca güncelleyebilirsiniz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Hosting ve domain hizmeti veriyor musunuz?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Evet, güvenilir hosting sağlayıcıları ile çalışarak size uygun hosting paketleri öneriyoruz. Domain kaydı ve yönetimi konusunda da destek sağlıyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>SEO hizmetleri neler içeriyor?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Teknik SEO, anahtar kelime araştırması, içerik optimizasyonu, sayfa hızı iyileştirme, meta etiketler ve Google Search Console kurulumu dahildir.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Mobil uyumlu tasarım garantisi var mı?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kesinlikle! Tüm web sitelerimiz responsive tasarım ile mobil, tablet ve masaüstü cihazlarda mükemmel görünecek şekilde optimize edilir.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Proje sonrası destek süreci nasıl işliyor?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pakete göre 1-6 ay ücretsiz destek sağlıyoruz. Bu süreçte küçük güncellemeler, hata düzeltmeleri ve teknik destek ücretsizdir. Sonrasında uygun ücretli destek paketleri mevcuttur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">İletişime Geçin</h2>
+                    <p class="contact-description">
+                        Projeniz hakkında konuşmak için benimle iletişime geçin. 
+                        Size en uygun çözümü birlikte bulalım.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <div>
+                                <h4>E-posta</h4>
+                                <p>info@yagizworks.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <div>
+                                <h4>Telefon</h4>
+                                <p>+90 544 257 7760</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <h4>Konum</h4>
+                                <p>Kahramanmaraş, Türkiye</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="clock"></i>
+                            <div>
+                                <h4>Çalışma Saatleri</h4>
+                                <p>Pazartesi - Cumartesi: 10:00 - 23:30</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://instagram.com/yagizjs" class="social-link"><i data-lucide="instagram"></i></a>
+                        <a href="https://github.com/Yagiz-Co" class="social-link"><i data-lucide="github"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="firstName">Ad</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="lastName">Soyad</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="email">E-posta</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="service">Hizmet</label>
+                            <select id="service" name="service" required>
+                                <option value="">Hizmet seçiniz</option>
+                                <option value="web-tasarim">Web Tasarım</option>
+                                <option value="web-gelistirme">Web Geliştirme</option>
+                                <option value="seo">SEO Optimizasyon</option>
+                                <option value="e-ticaret">E-Ticaret</option>
+                                <option value="bakim-destek">Bakım & Destek</option>
+                                <option value="mobil-uygulama">Mobil Uygulama</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="message">Mesaj</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        
+                        <div class="form-field checkbox-field">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">Kişisel verilerimin işlenmesini kabul ediyorum.</label>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">
+                            <span class="submit-text">Mesaj Gönder</span>
+                            <span class="submit-loading hidden">Gönderiliyor...</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Yağız Berk Önay. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Gizlilik Politikası</a>
+                    <a href="#" class="footer-link">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <i data-lucide="check-circle" class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
